@@ -1,0 +1,200 @@
+{
+  "levels": [
+    {
+      "id": "level-1-prompts",
+      "title": "Level 1: Prompts",
+      "description": "Master prompt foundations - Save 2-4 hrs/week",
+      "units": [
+        {
+          "id": "01-clear-prompts",
+          "title": "Writing Clear Prompts",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-1-prompts/01-clear-prompts.md"
+        },
+        {
+          "id": "02-multi-step-prompts",
+          "title": "Multi-Step Prompts",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-1-prompts/02-multi-step-prompts.md"
+        },
+        {
+          "id": "03-context-first-prompts",
+          "title": "Context-First Prompts",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-1-prompts/03-context-first-prompts.md"
+        },
+        {
+          "id": "04-precision-requests",
+          "title": "Precision Requests",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-1-prompts/04-precision-requests.md"
+        },
+        {
+          "id": "05-core-4-understanding",
+          "title": "Core 4 Understanding",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-1-prompts/05-core-4-understanding.md"
+        }
+      ]
+    },
+    {
+      "id": "level-2-commands",
+      "title": "Level 2: Commands",
+      "description": "Master slash commands - Save 4-6 hrs/week",
+      "units": [
+        {
+          "id": "01-understanding-commands",
+          "title": "Understanding Commands",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/01-understanding-commands.md"
+        },
+        {
+          "id": "02-analysis-commands",
+          "title": "Analysis Commands",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/02-analysis-commands.md"
+        },
+        {
+          "id": "03-generator-commands",
+          "title": "Generator Commands",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/03-generator-commands.md"
+        },
+        {
+          "id": "04-fix-commands",
+          "title": "Fix Commands",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/04-fix-commands.md"
+        },
+        {
+          "id": "05-workflow-commands",
+          "title": "Workflow Commands",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/05-workflow-commands.md"
+        },
+        {
+          "id": "06-command-optimization",
+          "title": "Command Optimization",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/06-command-optimization.md"
+        },
+        {
+          "id": "07-building-toolkit",
+          "title": "Building Your Toolkit",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-2-commands/07-building-toolkit.md"
+        }
+      ]
+    },
+    {
+      "id": "level-3-composition",
+      "title": "Level 3: Composition",
+      "description": "Master MCP & sub-agents - Save 6-10 hrs/week",
+      "units": [
+        {
+          "id": "01-understanding-mcp",
+          "title": "Understanding MCP",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-3-composition/01-understanding-mcp.md"
+        },
+        {
+          "id": "02-commands-with-mcp",
+          "title": "Commands with MCP",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-3-composition/02-commands-with-mcp.md"
+        },
+        {
+          "id": "03-understanding-sub-agents",
+          "title": "Understanding Sub-Agents",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-3-composition/03-understanding-sub-agents.md"
+        },
+        {
+          "id": "04-parallel-sub-agents",
+          "title": "Parallel Sub-Agents",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-3-composition/04-parallel-sub-agents.md"
+        },
+        {
+          "id": "05-composing-commands",
+          "title": "Composing Commands",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-3-composition/05-composing-commands.md"
+        },
+        {
+          "id": "06-advanced-workflows",
+          "title": "Advanced Workflows",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-3-composition/06-advanced-workflows.md"
+        }
+      ]
+    },
+    {
+      "id": "level-4-skills",
+      "title": "Level 4: Skills",
+      "description": "Master autonomous skills - Save 15-25 hrs/week",
+      "units": [
+        {
+          "id": "01-understanding-skills",
+          "title": "Understanding Skills",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-4-skills/01-understanding-skills.md"
+        },
+        {
+          "id": "02-first-simple-skill",
+          "title": "Your First Simple Skill",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-4-skills/02-first-simple-skill.md"
+        },
+        {
+          "id": "03-adding-resources",
+          "title": "Adding Resources",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-4-skills/03-adding-resources.md"
+        },
+        {
+          "id": "04-composing-in-skills",
+          "title": "Composing in Skills",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-4-skills/04-composing-in-skills.md"
+        },
+        {
+          "id": "05-meta-skills",
+          "title": "Meta Skills",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-4-skills/05-meta-skills.md"
+        },
+        {
+          "id": "06-advanced-patterns",
+          "title": "Advanced Patterns",
+          "learnTime": 5,
+          "practiceTime": 15,
+          "file": "level-4-skills/06-advanced-patterns.md"
+        }
+      ]
+    }
+  ]
+}
