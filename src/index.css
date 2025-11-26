@@ -49,13 +49,93 @@ body {
   margin-bottom: 2rem;
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .dashboard-header h1 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
 
 .subtitle {
   color: var(--text-muted);
+}
+
+/* Language Selector */
+.language-selector {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  background: var(--bg-card);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0.6;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+  background: var(--bg-hover);
+}
+
+.lang-btn.active {
+  opacity: 1;
+  border-color: var(--primary);
+  background: var(--bg-hover);
+}
+
+/* Intro Section */
+.intro-section {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--primary);
+}
+
+.intro-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.intro-section ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.intro-section li {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.intro-section strong {
+  color: var(--text);
+}
+
+.intro-tip {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.intro-tip code {
+  background: var(--bg);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
 }
 
 /* Overall Progress */
@@ -376,6 +456,327 @@ body {
 
 .btn-export:hover {
   background: var(--bg-hover);
+}
+
+/* Mode Tabs */
+.mode-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-tabs .tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.mode-tabs .tab:hover {
+  border-color: var(--primary);
+}
+
+.mode-tabs .tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn-practice {
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.btn-practice:hover {
+  background: #16a34a;
+}
+
+/* Practice Mode */
+.practice-mode {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.practice-header {
+  margin-bottom: 2rem;
+}
+
+.practice-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.practice-title h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.timer {
+  font-family: monospace;
+  font-size: 1.25rem;
+  background: var(--bg-card);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  color: var(--primary);
+}
+
+.practice-progress {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Exercise Container */
+.exercise-container {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.exercise-type {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.exercise-prompt {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.vague-prompt, .task-prompt {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.vague-prompt .label, .task-prompt .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.vague-prompt code {
+  font-size: 1.1rem;
+  color: var(--warning);
+  background: none;
+}
+
+.exercise-instruction {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.answer-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn-check {
+  margin-top: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-check:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Feedback */
+.feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+.score {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.score.score-good { color: var(--success); }
+.score.score-ok { color: var(--warning); }
+.score.score-bad { color: #ef4444; }
+
+.feedback-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.feedback-list li {
+  padding: 0.25rem 0;
+}
+
+.feedback-list li.good { color: var(--success); }
+.feedback-list li.bad { color: var(--text-muted); }
+
+.example-answer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--success);
+}
+
+.example-answer strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.example-answer code {
+  display: block;
+  color: var(--success);
+  background: none;
+  font-size: 0.95rem;
+}
+
+/* Exercise Navigation */
+.exercise-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.btn-prev, .btn-next {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.btn-prev:disabled, .btn-next:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-prev:hover:not(:disabled), .btn-next:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+/* Checklist Section */
+.checklist-section {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.checklist-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+.checklist-instruction {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 0.75rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+}
+
+.checklist li.checked {
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 3px solid var(--success);
+}
+
+.checklist label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  accent-color: var(--success);
+}
+
+/* Practice Footer */
+.practice-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+}
+
+.completion-status .ready {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.completion-status .not-ready {
+  color: var(--text-muted);
+}
+
+.practice-footer .btn-complete {
+  background: var(--success);
+}
+
+.practice-footer .btn-complete:disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
 }
 
 /* Loading & Error States */

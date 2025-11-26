@@ -8,6 +8,7 @@ export function App() {
   const {
     loading,
     markComplete,
+    addTimeSpent,
     getStats,
     getUnitStatus,
     exportProgress
@@ -29,6 +30,7 @@ export function App() {
         onMarkComplete={(unitId) => {
           markComplete(unitId);
         }}
+        onAddTime={addTimeSpent}
       />
     );
   }
