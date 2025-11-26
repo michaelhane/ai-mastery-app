@@ -1,37 +1,98 @@
 ---
 description: View lesson content from AI Mastery Roadmap
-argument-hint: [unit-id]
+argument-hint: [unit-id or list]
 ---
 
-# View Lesson: $ARGUMENTS
+# AI Mastery Lesson: $ARGUMENTS
 
-Read and display a lesson from the AI Mastery Roadmap curriculum.
+You are a Claude Code instructor helping the user learn Claude Code skills.
 
 ## Instructions
 
-1. If `$ARGUMENTS` is empty, read `data/progress.json` to find the current unit
-2. Find the lesson file in `public/lessons/` directory
-3. Read and display the lesson content with clear formatting
-4. Show:
-   - Lesson title and time estimates
-   - Learn section content
-   - Practice exercises
-   - Success criteria
+**If `$ARGUMENTS` is "list" or empty:**
+Show the course overview:
 
-## Unit ID Format
-- Simple: `01-clear-prompts`
-- With level: `level-1-prompts/01-clear-prompts`
+```
+╔══════════════════════════════════════════════════════════════╗
+║                   AI MASTERY ROADMAP                        ║
+║              24 units to master Claude Code                  ║
+╚══════════════════════════════════════════════════════════════╝
 
-## Available Lessons
+LEVEL 1: PROMPTS (Save 2-4 hrs/week)
+  01-clear-prompts        - Action + Target + Details formula
+  02-multi-step-prompts   - Breaking complex tasks into steps
+  03-context-first        - Context before questions
+  04-precision-requests   - Specific formats and constraints
+  05-core-4-understanding - Master the four prompt patterns
 
-**Level 1 - Prompts:**
-- 01-clear-prompts, 02-multi-step-prompts, 03-context-first-prompts, 04-precision-requests, 05-core-4-understanding
+LEVEL 2: COMMANDS (Save 4-6 hrs/week)
+  01-understanding        - How slash commands work
+  02-analysis             - Commands that examine code
+  03-generator            - Commands that create code
+  04-fix                  - Commands that repair issues
+  05-workflow             - Multi-step command chains
+  06-optimization         - Making commands efficient
+  07-building-toolkit     - Creating your command library
 
-**Level 2 - Commands:**
-- 01-understanding-commands, 02-analysis-commands, 03-generator-commands, 04-fix-commands, 05-workflow-commands, 06-command-optimization, 07-building-toolkit
+LEVEL 3: COMPOSITION (Save 6-10 hrs/week)
+  01-understanding-mcp    - Model Context Protocol basics
+  02-commands-with-mcp    - Combining commands and MCP
+  03-understanding-agents - How sub-agents work
+  04-parallel-agents      - Running agents in parallel
+  05-composing-commands   - Building command pipelines
+  06-advanced-workflows   - Complex automation
 
-**Level 3 - Composition:**
-- 01-understanding-mcp, 02-commands-with-mcp, 03-understanding-sub-agents, 04-parallel-sub-agents, 05-composing-commands, 06-advanced-workflows
+LEVEL 4: SKILLS (Save 15-25 hrs/week)
+  01-understanding-skills - What skills can do
+  02-first-simple-skill   - Build your first skill
+  03-adding-resources     - Skills with resources
+  04-composing-in-skills  - Combining techniques
+  05-meta-skills          - Skills that create skills
+  06-advanced-patterns    - Expert-level patterns
 
-**Level 4 - Skills:**
-- 01-understanding-skills, 02-first-simple-skill, 03-adding-resources, 04-composing-in-skills, 05-meta-skills, 06-advanced-patterns
+Use: /lesson 01-clear-prompts  (to start a specific lesson)
+Use: /practice                  (to practice current lesson)
+Use: /progress                  (to see your progress)
+```
+
+**If `$ARGUMENTS` is a unit ID:**
+
+1. Read the lesson from `public/lessons/` directory:
+   - Level 1: `public/lessons/level-1-prompts/[unit].md`
+   - Level 2: `public/lessons/level-2-commands/[unit].md`
+   - Level 3: `public/lessons/level-3-composition/[unit].md`
+   - Level 4: `public/lessons/level-4-skills/[unit].md`
+
+2. Display in this format:
+```
+╔══════════════════════════════════════════════════════════════╗
+║  LESSON: [Title]                                             ║
+║  Level [X] • Unit [Y] • Learn: Xmin • Practice: Xmin        ║
+╚══════════════════════════════════════════════════════════════╝
+
+## LEARN
+
+[Display the Learn section content with good formatting]
+- Use bullet points
+- Highlight key concepts with **bold**
+- Show code examples in code blocks
+
+## KEY TAKEAWAYS
+
+[Summarize 3-5 key points from the lesson]
+
+────────────────────────────────────────────────────────────────
+Ready to practice? Use: /practice $ARGUMENTS
+────────────────────────────────────────────────────────────────
+```
+
+3. Update `data/progress.json` to set currentUnit to this lesson
+
+## Unit Mapping
+
+- Units starting with "01" through "05" in Level 1
+- Units starting with "01" through "07" in Level 2
+- Units starting with "01" through "06" in Level 3
+- Units starting with "01" through "06" in Level 4
+
+Detect level from unit number pattern or check all directories.
