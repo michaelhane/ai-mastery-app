@@ -22,34 +22,62 @@ Combine slash commands + MCP servers for powerful external integration workflows
 
 ### Composition Pattern
 
-```markdown
+```
 1. Use MCP to fetch external data
 2. Process/analyze with Claude
 3. Take action (local or via MCP)
 ```
 
-### Example
+### How MCP Tools Appear
+
+When you have MCP servers configured, their tools appear with `mcp__` prefix:
+- `mcp__github__search_repositories`
+- `mcp__filesystem__read_file`
+- `mcp__memory__store`
+
+### Example Command
+
+Create `.claude/commands/gh-status.md`:
 
 ```markdown
-# GitHub Status
+---
+description: Show my GitHub status dashboard
+---
 
-Check my GitHub work.
+# GitHub Status Dashboard
 
-1. Use GitHub MCP to fetch:
+Use the GitHub MCP tools to check my work:
+
+1. Use mcp__github tools to fetch:
    - My open PRs
    - PRs awaiting my review
    - Recent issues assigned to me
-2. For each PR:
-   - Show title, number, status
-   - Check if CI passed
-   - Note if mergeable
-3. Prioritize by:
-   - 🔴 PRs with failing CI
-   - 🟡 PRs awaiting review
-   - 🟢 PRs ready to merge
-4. Provide dashboard summary table
+
+2. For each PR show:
+   - Title, number, status
+   - CI status (passed/failed)
+   - Mergeable status
+
+3. Prioritize and format as:
+   - 🔴 PRs with failing CI (fix first)
+   - 🟡 PRs awaiting review (review next)
+   - 🟢 PRs ready to merge (merge when ready)
+
+4. Output as a summary table
 
 Keep it concise.
+```
+
+### Key Pattern: MCP + Local Tools
+
+```
+MCP fetches external data
+    ↓
+Claude processes/analyzes
+    ↓
+Local tools (Edit, Write) make changes
+    ↓
+MCP pushes results back (optional)
 ```
 
 ---

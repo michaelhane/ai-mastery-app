@@ -24,7 +24,7 @@ What MCP servers are, when to use them, and how to set up your first integration
 
 **MCP = Model Context Protocol**
 
-MCP servers connect Claude to external services.
+MCP servers connect Claude to external services. They run as separate processes and communicate via stdio (standard input/output).
 
 ### When to Use MCP
 
@@ -33,17 +33,32 @@ MCP servers connect Claude to external services.
 - Third-party APIs (Jira, Slack)
 - File systems outside project
 - Cloud services (AWS, GCP)
+- Persistent connections to services
 
 **Don't use MCP for:**
 - Local project files (use Read/Write/Edit)
 - Simple scripts (use Bash)
 - One-time tasks (use prompts)
 
-### You Don't Control MCP
+### MCP Architecture
 
-- **You install** existing MCP servers
-- **You use** them in prompts/commands
-- **Others build** the actual servers
+```
+Your Project
+    │
+    ├── .mcp.json          ← Config file (PROJECT ROOT!)
+    │
+    └── Claude Code CLI
+            │
+            ├── MCP Server 1 (stdio) → GitHub API
+            ├── MCP Server 2 (stdio) → Database
+            └── MCP Server 3 (stdio) → Slack
+```
+
+### Key Concepts
+
+- **Transport:** Always `"stdio"` for Claude Code CLI
+- **Config location:** `.mcp.json` in PROJECT ROOT (not in .claude/)
+- **Tools:** Each MCP server provides tools you can use in prompts
 
 ---
 
@@ -54,19 +69,23 @@ MCP servers connect Claude to external services.
 Pick one to install:
 
 **Option A: Filesystem MCP**
+
+Create `.mcp.json` in your **project root**:
 ```json
-// .claude/claude_desktop_config.json
 {
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "E:/pai"]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/folder"],
+      "transport": "stdio"
     }
   }
 }
 ```
 
 **Option B: GitHub MCP**
+
+Create `.mcp.json` in your **project root**:
 ```json
 {
   "mcpServers": {
@@ -75,17 +94,31 @@ Pick one to install:
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": {
         "GITHUB_TOKEN": "your_token_here"
-      }
+      },
+      "transport": "stdio"
+    }
+  }
+}
+```
+
+**Option C: Memory MCP (for persistent notes)**
+```json
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "transport": "stdio"
     }
   }
 }
 ```
 
 **Installation steps:**
-1. Edit config file
-2. Add MCP server configuration
-3. Restart Claude Code
-4. Verify it's available
+1. Create `.mcp.json` in project root (NOT in .claude/)
+2. Add MCP server configuration with `"transport": "stdio"`
+3. Restart Claude Code CLI
+4. Verify with: "What MCP tools are available?"
 
 **Which did you install?** _____
 **Successfully installed?** Yes / No
