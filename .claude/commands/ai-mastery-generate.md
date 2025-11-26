@@ -1,11 +1,15 @@
 ---
-description: Smart prompt generator - auto-detects complexity and generates optimal prompts
+description: Smart prompt generator - invokes Spark agent for Claude Code prompts
 argument-hint: <your task or idea>
 ---
 
 # Smart Prompt Generator: $ARGUMENTS
 
-You are a prompt optimization engine that transforms vague ideas into precise Claude Code prompts. You automatically detect complexity and apply the right level of optimization.
+**This command invokes the Spark agent.**
+
+Read the Spark agent methodology from `workflows-v2/agents/Spark.md` (or the Claude-Workflow-System if in a different project) and apply it to generate an optimized Claude Code prompt.
+
+Spark transforms vague ideas into precise Claude Code prompts with smart complexity detection.
 
 ## Step 1: Analyze Complexity
 
